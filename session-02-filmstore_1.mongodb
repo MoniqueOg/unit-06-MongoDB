@@ -1,0 +1,47 @@
+use('filmstore');
+ //(TASK 1)
+// how many movies have a runtime of longer than 175 minutes and what is the query to retireve them?
+db.movie.find({runtime:{$gt:175}},{title:1, _id:0}).sort({title:1}).count();
+
+// how many movies are rated pg-13 
+db.movie.find({rated:'PG-13'},{title:1,_id:0}).sort({title:1}).count();
+
+//how many movies were released in the year 2000 
+db.movie.find({year:2000},{title:1,_id:0}).sort({title:1}).count();
+
+// how many movies filmed in Italy  (or featured Italy)? Use countries array in this query.
+db.movie.find({countries:{$in: ['Italy']}},{title:1,_id:0}).sort({title:1}).count();
+
+db.movie.find({countries:"Italy"},{title:1,_id:0}).sort({title:1}).count();
+
+// exclusively returns value as an array
+//db.movie.find({countries:["Italy"]},{title:1,_id:0}).sort({title:1}).count();
+
+// how many movies were only filmed in Italy?
+db.movie.find({countries:{$all: ['Italy']}},{title:1,_id:0}).sort({title:1}).count();
+
+// how many movies will star Will Smith, actors is an array
+db.movie.find({actors:{$in: ['Will Smith']}},{title:1,_id:0}).sort({title:1}).count();
+
+// HOMEWORK
+
+// What is the query to return the first 10 films displaying only the title, year of release and the plot?
+db.movie.find({},{title:1,year:1,plot:1,_id:0}).sort({title:1}).limit(10);
+
+// Return the title for all the films that were released between the years 1950 and 2000 AND recieved over 10 awards
+db.movie.find({year:{$gt:1950,$lt:2000},awards:{$gt:10}},{title:1,_id:0}).sort({title:1});
+
+// Return the title for all the films that were released between the years 1950 and 2000 OR recieved over 10 awards
+db.movie.find({$or:[{year:{$gt:1950,$lt:2000}},{awards:{$gt:10}}]},{title:1,_id:0}).sort({title:1});
+
+// Return the title and year and awards count of queries 2 and 3 above
+db.movie.find({year:{$gt:1950,$lt:2000},awards:{$gt:10}},{title:1,year:1,awards:1,_id:0}).count();
+
+// Return the count() of all films that have exactly 2 actors
+db.movie.find({actors:{$size:2}},{title:1,_id:0}).count();
+
+// Return the title and array of actors for each film that has exactly 2 actors listed
+db.movie.find({actors:{$size:2}},{title:1,actors:1,_id:0}).sort({title:1});
+
+// Return the title and array of actors for each film that has exactly 2 actors and have a genre of Short
+db.movie.find({actors:{$size:2},genres:{$in: ['Short']}},{title:1,actors:1,_id:0}).sort({title:1});

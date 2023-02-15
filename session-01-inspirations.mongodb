@@ -1,0 +1,13 @@
+ //(TASK 1)
+ 
+ use('inspirations');
+
+// born after 01/01/1950
+db.profile.find({born:{$gt:1950}}).count();
+
+// not born in the united states 
+db.profile.find({country:{$ne: "United States"}}).count();
+
+// full name born in Kenya
+db.profile.find({country: "Kenya"}, {firstname: 1, lastname:1, country: 1});
+

@@ -1,0 +1,57 @@
+use('quiz');
+
+//(TASK 1) What is the output from the command 'typeof mydate_1'? 
+var mydate_1 = Date();
+mydate_1; 
+typeof mydate_1;
+//string
+
+//What is the output from the command 'typeof mydate_2'? 
+var mydate_2 = new Date();
+mydate_2; 
+typeof mydate_2;
+//object
+
+//What is the output from the command 'myObjId.getTimeStamp() and 'myObjId.valueOf()'?
+var myObjId = new ObjectId();
+console.log(typeof myObjId);
+console.log(myObjId.getTimeStamp());
+console.log(myObjId.toString());
+console.log(myObjId.valueOf());
+//unidentified because it is not a function //comment out each console.log() because it will not run the next line
+
+//How many user records were inserted?
+//7
+
+//What query would you use to find how many users have "feedback" field?
+db.users.find({feedback: {$exists: true}}).count();
+
+//What query would you use to find out how many users took the "Python" quiz?
+db.users.find({quiz: "Python"}).count();
+
+//Return all users where the score in BSON type double. What is the syntax and how many records are there?
+db.users.find({score: {$type: "double"}}).count();
+//0
+
+//List the name of all users with atleast one score above A or above. What is the syntax query?
+db.users.find({scores: {$elemMatch: {score: {$gte: 75}}}});
+
+//List the name and scores of all users with atleast one score of D or below.
+db.users.find({scores: {$elemMatch: {score: {$lte: 24}}}});
+
+//(TASK 2)Select Anna's data by searching for all records with a name = Anna. How many quizzes has anna completed? All completed quizzes have a score. What is the syntax for this query?
+db.users.find({"name": "Anna"}).count();
+//1
+
+//Some records have an incorrect property feedback. Remove the incorrect field named feedback using $unset for all the records. What is the syntax of the query?
+db.users.update({}, {$unset: {"feedback": ""}}, {multi: true});
+
+//Change the field name score to grade for all records. What is the syntax of the query?
+db.users.update({}, {$rename: {"score": "grade"}}, {multi: true});
+
+//(TASK 3) Select all the distinct quizzes taken by all students. What is the syntax for this? (Hint: use $distinct)
+db.users.distinct("quiz");
+
+//Select the range of scores/grades given to all students. What is the syntax for this? (Hint: use $distinct)
+db.users.distinct("grade");
+

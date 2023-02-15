@@ -1,0 +1,172 @@
+// Inspiration Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('inspirations');
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+// db.profile.drop();
+
+db.profile.insertMany([{
+        "firstname" : "Maya",
+        "lastname" : "Angelou",
+        "occupation" : [
+                "Poet",
+                "Novelist"
+        ],
+        "quotes" : [
+                {
+                        "quote" : "I believe that the most important single thing, beyond discipline and creativity, is daring to dare",
+						"type" : [
+							"Work",
+							"Creativity"
+						]
+                },
+				{
+                        "quote" : "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+						"type" : [
+							"Relationships"
+						]
+                },
+				{
+                        "quote" : "When someone shows you who they are believe them; the first time.",
+						"type" : [
+							"Relationships"
+						]
+                },
+				{
+                        "quote" : "We delight in the beauty of the butterfly, but rarely admit the changes it has gone through to achieve that beauty.",
+						"type" : [
+							"Creativity"
+						]
+                },
+				{
+                        "quote" : "Courage is the most important of all the virtues because without courage, you can't practice any other virtue consistently.",
+						"type" : [
+							"Courage"
+						]
+                },
+				{
+                        "quote" : "I don't trust people who don't love themselves and tell me, 'I love you.' ... There is an African saying which is: Be careful when a naked person offers you a shirt.",
+						"type" : [
+							"Relationships"
+						]
+                },
+				{
+                        "quote" : "Success is liking yourself, liking what you do, and liking how you do it.",
+						"type" : [
+							"Work"
+						]
+                },
+				{
+                        "quote" : "Never make someone a priority when all you are to them is an option",
+						"type" : [
+							"Relationships"
+						]
+                },
+				{
+                        "quote" : "You can only become truly accomplished at something you love. Don’t make money your goal. Instead pursue the things you love doing and then do them so well that people can’t take their eyes off of you",
+						"type" : [
+							"Work"
+						]
+                },
+				{
+                        "quote" : "Pretty women wonder where my secret lies.\nI'm not cute or built to suit a fashion model's size\nBut when I start to tell them,\nThey think I'm telling lies.\nI say,\nIt's in the reach of my arms\nThe span of my hips,\nThe stride of my step,\nThe curl of my lips.\nI'm a woman\nPhenomenally.\nPhenomenal woman,\nThat's me.",
+						"type" : [
+							"Work"
+						]
+                }
+        ],
+        "born" : new Date("1928-04-04"),
+        "died" : new Date("2014-05-28"),
+		"height" : 1830,
+		"country" : "United States",
+		"bio" : "American poet, singer, memoirist, and civil rights activist. She published seven autobiographies, three books of essays, several books of poetry, and is credited with a list of plays, movies, and television shows spanning over 50 years"
+},
+{
+        "firstname" : "Toni",
+        "lastname" : "Morrison",
+        "occupation" : [
+                "Novelist"
+        ],
+        "quotes" : [
+                {
+                        "quote" : "If there is a book that you want to read, but it hasn't been written yet, you must be the one to write it.",
+						"type" : [
+							"Creativity"
+						]
+                },
+				{
+                        "quote" : "We die. That may be the meaning of life. But we do language. That may be the measure of our lives.",
+						"type" : [
+							"Mortality"
+						]
+                },
+				{
+                        "quote" : "You wanna fly, you got to give up the shit that weighs you down",
+						"type" : [
+							"Freedom"
+						],
+                        "year" : 1977
+                },
+				{
+                        "quote" : "At some point in life the world's beauty becomes enough. You don't need to photograph, paint, or even remember it. It is enough",
+						"type" : [
+							"Creativity"
+						]
+                },
+				{
+                        "quote" : "Anger ... it's a paralyzing emotion ... you can't get anything done. People sort of think it's an interesting, passionate, and igniting feeling — I don't think it's any of that — it's helpless ... it's absence of control — and I need all of my skills, all of the control, all of my powers ... and anger doesn't provide any of that — I have no use for it whatsoever.",
+						"type" : [
+							"Emotion"
+						],
+                        "year" : 1987
+                }
+        ],
+        "born" : new Date("1931-02-18"),
+        "died" : new Date("2019-08-05"),
+		"country" : "United States",
+		"bio" : "American novelist, essayist, book editor, and college professor. Her first novel, The Bluest Eye, was published in 1970. The critically acclaimed Song of Solomon (1977) brought her national attention and won the National Book Critics Circle Award. In 1988, Morrison won the Pulitzer Prize for Beloved (1987); she gained worldwide recognition when she was awarded the Nobel Prize in Literature in 1993."
+},
+{
+        "firstname" : "Wangari",
+        "lastname" : "Maathai",
+        "occupation" : [
+                "Writer",
+                "Political Activist",
+				"Environmentalist"
+        ],
+        "born" : new Date("1940-04-01"),
+        "died" : new Date("2011-09-25"),
+		"country" : "Kenya",
+		"bio" : "Renowned Kenyan social, environmental and political activist and the first African woman to win the Nobel Prize. She was educated in the United States at Mount St. Scholastica (Benedictine College) and the University of Pittsburgh, as well as the University of Nairobi in Kenya"
+},
+{
+        "firstname" : "Zora",
+        "lastname" : "Neale",
+        "occupation" : [
+                "Filmaker",
+                "Anthropologist"
+        ],
+        "quotes" : [
+                {
+                        "quote" : "Sometimes, I feel discriminated against, but it does not make me angry. It merely astonishes me. How can any deny themselves the pleasure of my company? It's beyond me.",
+						"type" : [
+							"Personal"
+						]
+                },
+				{
+                        "quote" : "Love makes your soul crawl out from its hiding place",
+						"type" : [
+							"Love"
+						]
+                }
+        ],
+        "born" : new Date("1891-01-07"),
+        "died" : new Date("1960-01-28"),
+		"country" : "United States",
+		"bio" : " American author, anthropologist, and filmmaker. She portrayed racial struggles in the early-1900s American South and published research on hoodoo.[3] The most popular of her four novels is Their Eyes Were Watching God, published in 1937. She also wrote more than 50 short stories, plays, and essays."
+}]);

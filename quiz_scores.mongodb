@@ -1,0 +1,15 @@
+use('quiz');
+
+db.score.insertMany([
+      { "_id" : 1, "name": "Martin", "score": "A+" , "feedback": "", created: new ObjectId(), survey:["NodeJs"]},
+      { "_id" : 2, "name": "Lunar", "score": 101, "feedback": "Error!", created: new ObjectId(), quizzes:["NodeJs"]},
+      { "_id" : 3, "name": "James", "score": NumberLong(692) , "feedback": "broken", created: new ObjectId(), quizzes:["NodeJs"]},
+      { "_id" : 4, "name": "Dwayne" , "score": NumberInt(886), created: new ObjectId() },
+      { "_id" : 5, "name": "Simone", "score": ["B", 59, 82.5, "A"], created: new ObjectId(), quizzes:["GIT","JavaScript","NodeJs","Python"]},
+      { "_id" : 6, "name": "Rebecca", "score": "C", created: new ObjectId(), quizzes:["SQL"]},
+      { "_id" : 7, "name": "Stacey", "score": "54", "feedback": "Missing", quizzes:["Python"], created: new ObjectId()},
+      { "name": "Elaine", "score": 68.05 , "feedback": null, quizzes:["Jenkins"]},
+      { "name": "Anna" , "score": "96%", "feedback": null,"fedback": null, quizzes:["Terraform"]},
+      { name: "Jacob" , "score": ["52%",8.3,72,"B+"] , "feedback": "NULL", quizzes:["Python","Javascript","React"]},
+      { "_id" : 8, "name": "Elaine", "score": NumberInt(555), quizzes:["Ruby"] }
+]);
