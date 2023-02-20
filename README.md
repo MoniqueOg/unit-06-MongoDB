@@ -1,1 +1,3 @@
-# unit-06-MongoDB
+# MongoDB
+
+Solving common queries using MongoDB
